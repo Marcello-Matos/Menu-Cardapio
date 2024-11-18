@@ -139,7 +139,7 @@ checkoutBtn.addEventListener("click", function () {
   const encodedMessage = encodeURIComponent(message);
 
   // Link para o WhatsApp com a mensagem do pedido
-  const whatsappLink = `https://wa.me/5511974087283?text=${encodedMessage}`;
+  const whatsappLink = `https://wa.me/5511938028926?text=${encodedMessage}`;
 
   // Limpar o carrinho após o envio
   cart = []; // Zera o carrinho
