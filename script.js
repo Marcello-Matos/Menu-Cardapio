@@ -132,7 +132,7 @@ checkoutBtn.addEventListener("click", function () {
   cart.forEach((item) => {
     message += `Produto: ${item.name} - Quantidade: ${item.quantity}\n`;
   });
-  message += `\nEndereço de entrega: ${addressInput.value}\n`;
+  message += `\nMesa: ${addressInput.value}\n`;
   message += "\nPor favor, confirmem o pedido.";
 
   // Codificando a mensagem para ser usada na URL
@@ -155,7 +155,7 @@ checkoutBtn.addEventListener("click", function () {
 function checkRestauranteOpen() {
   const data = new Date();
   const hora = data.getHours();
-  return hora >= 18 && hora < 23; // Restaurante aberto entre 22h e 23h
+  return hora >= 8 && hora < 23; // Restaurante aberto entre 22h e 23h
 }
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -175,12 +175,12 @@ document.addEventListener("DOMContentLoaded", function () {
       // Atualiza a classe e o texto para "Aberto"
       horarioCard.classList.remove("bg-red-500");
       horarioCard.classList.add("bg-green-600");
-      horarioText.textContent = "Seg a Dom: 18h00 até as 23h00 - Aberto!";
+      horarioText.textContent = "Seg a Dom: 8h00 até as 23h00 - Aberto!";
     } else {
       // Atualiza a classe e o texto para "Fechado"
       horarioCard.classList.remove("bg-green-600");
       horarioCard.classList.add("bg-red-500");
-      horarioText.textContent = "Seg a Dom: 18h00 até as 23h00 - Fechado!";
+      horarioText.textContent = "Seg a Dom: 8h00 até as 23h00 - Fechado!";
     }
   }
 
