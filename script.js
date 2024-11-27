@@ -132,7 +132,7 @@ checkoutBtn.addEventListener("click", function () {
   cart.forEach((item) => {
     message += `Produto: ${item.name} - Quantidade: ${item.quantity}\n`;
   });
-  message += `\nMesa: 1 ${addressInput.value}\n`;
+  message += `\nMesa:  ${addressInput.value}\n`;
   message += "\nPor favor, confirmem o pedido.";
 
   // Codificando a mensagem para ser usada na URL
