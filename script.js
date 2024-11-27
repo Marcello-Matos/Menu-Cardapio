@@ -80,7 +80,7 @@ function updateCartModal() {
     cartItemsContainer.appendChild(cartItemElement); // Adiciona o item ao contêiner
   });
 
-  cartTotal.innerText = `Mesa 1`; // Define o total como "Grátis"
+  cartTotal.innerText = `Total: Grátis`; // Define o total como "Grátis"
 }
 
 // Função para atualizar o contador de itens no botão do carrinho
