@@ -80,7 +80,7 @@ function updateCartModal() {
     cartItemsContainer.appendChild(cartItemElement); // Adiciona o item ao contêiner
   });
 
-  cartTotal.innerText = `Total: Grátis`; // Define o total como "Grátis"
+  cartTotal.innerText = `Mesa 1`; // Define o total como "Grátis"
 }
 
 // Função para atualizar o contador de itens no botão do carrinho
@@ -132,7 +132,7 @@ checkoutBtn.addEventListener("click", function () {
   cart.forEach((item) => {
     message += `Produto: ${item.name} - Quantidade: ${item.quantity}\n`;
   });
-  message += `\nMesa: ${addressInput.value}\n`;
+  message += `\nMesa: 1 ${addressInput.value}\n`;
   message += "\nPor favor, confirmem o pedido.";
 
   // Codificando a mensagem para ser usada na URL
