@@ -109,10 +109,9 @@ function decreaseItem(name) {
 function checkRestauranteOpen() {
   const data = new Date();
   const hora = data.getHours();
-  return hora >= 18 && hora < 23; // Restaurante aberto entre 18h e 23h
+  return hora >= 5 && hora < 23; // Restaurante aberto entre 18h e 23h
 }
 
-// Finalizar pedido e enviar via WhatsApp
 checkoutBtn.addEventListener("click", function () {
   const isOpen = checkRestauranteOpen();
   if (!isOpen) {
@@ -121,18 +120,16 @@ checkoutBtn.addEventListener("click", function () {
   }
 
   if (cart.length === 0) return;
-  if (addressInput.value === "") {
-    addressWarn.classList.remove("hidden");
-    addressInput.classList.add("border-red-500");
-    return;
-  }
+
+  // Define valor padrão para o número da mesa, desativando a validação
+  const mesaNumero = "N/A"; 
 
   // Montando a mensagem do pedido
   let message = "Olá, gostaria de fazer um pedido:\n\n";
   cart.forEach((item) => {
     message += `Produto: ${item.name} - Quantidade: ${item.quantity}\n`;
   });
-  message += `\nMesa:  ${addressInput.value}\n`;
+  message += `\nMesa: ${mesaNumero}\n`;
   message += "\nPor favor, confirmem o pedido.";
 
   // Codificando a mensagem para ser usada na URL
@@ -148,45 +145,4 @@ checkoutBtn.addEventListener("click", function () {
 
   // Redireciona o usuário para o WhatsApp
   window.open(whatsappLink, "_blank");
-});
-
-// Aguarda o DOM ser carregado
-// Função para verificar se o restaurante está aberto
-function checkRestauranteOpen() {
-  const data = new Date();
-  const hora = data.getHours();
-  return hora >= 8 && hora < 23; // Restaurante aberto entre 22h e 23h
-}
-
-document.addEventListener("DOMContentLoaded", function () {
-  const horarioCard = document.getElementById("horario-card"); // Contêiner que exibe os horários
-  const horarioText = document.getElementById("horario-text"); // Texto que será alterado com o horário
-
-  if (!horarioCard || !horarioText) {
-    console.error("Elementos #horario-card ou #horario-text não encontrados!");
-    return; // Evita erros caso os elementos não estejam presentes
-  }
-
-  // Função para atualizar o status do restaurante
-  function updateRestauranteStatus() {
-    const isOpen = checkRestauranteOpen();
-
-    if (isOpen) {
-      // Atualiza a classe e o texto para "Aberto"
-      horarioCard.classList.remove("bg-red-500");
-      horarioCard.classList.add("bg-green-600");
-      horarioText.textContent = "Seg a Dom: 8h00 até as 23h00 - Aberto!";
-    } else {
-      // Atualiza a classe e o texto para "Fechado"
-      horarioCard.classList.remove("bg-green-600");
-      horarioCard.classList.add("bg-red-500");
-      horarioText.textContent = "Seg a Dom: 8h00 até as 23h00 - Fechado!";
-    }
-  }
-
-  // Chama a função inicialmente para definir o status
-  updateRestauranteStatus();
-
-  // Verifica e atualiza o status a cada 5 minutos (300000ms)
-  setInterval(updateRestauranteStatus, 300000); // Atualiza a cada 5 minutos
 });
