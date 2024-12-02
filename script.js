@@ -122,14 +122,14 @@ checkoutBtn.addEventListener("click", function () {
   if (cart.length === 0) return;
 
   // Define valor padrão para o número da mesa, desativando a validação
-  const mesaNumero = "N/A"; 
+  const mesaNumero = "1"; 
 
   // Montando a mensagem do pedido
   let message = "Olá, gostaria de fazer um pedido:\n\n";
   cart.forEach((item) => {
     message += `Produto: ${item.name} - Quantidade: ${item.quantity}\n`;
   });
-  message += `\nMesa: ${mesaNumero}\n`;
+  message += `\nMesa:  ${mesaNumero}\n`;
   message += "\nPor favor, confirmem o pedido.";
 
   // Codificando a mensagem para ser usada na URL
@@ -146,3 +146,9 @@ checkoutBtn.addEventListener("click", function () {
   // Redireciona o usuário para o WhatsApp
   window.open(whatsappLink, "_blank");
 });
+
+// CONFIGURAÇÃO DO QR CODE INICO
+
+
+
+// CONFIGURAÇÃO PARA SEGUNDA TELA FIM

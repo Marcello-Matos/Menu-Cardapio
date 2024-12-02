@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link href="./styles/output.css" rel="stylesheet" />
+
+    <title>Pedidos Recebidos</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="w-full h-[420px] bg-home bg-cover bg-center">
+        <div class="w-full h-full text-center text-white flex flex-col justify-center items-center">
+            <img src="./assets/logo original.svg" alt="Logo JD" class="w-32 h-32 mx-auto rounded-full shadow-lg hover:scale-110 duration-200" />
+            <h1 class="text-4xl mt-4 mb-2 font-bold">Confraternização JD</h1>
+            <span class="text-white font-medium">Rua 123456, Alphaville Centro SP</span>
+            <div id="horario-card" class="bg-green-500 px-4 py-1 rounded-lg mt-4">
+                <span id="horario-text" class="inline-block w-auto max-w-xs text-center">Seg á Dom: 05h00 até as 23h00 - Fechado!</span>
+            </div>
+        </div>
+    </header>
+    <!-- HEADER END -->
+
+    <h2 class="text-2xl md:text-3xl font-bold text-center mt-9 mb-6">Pedidos Recebidos</h2>
+
+    <!-- INÍCIO SEÇÃO DE PEDIDOS -->
+    <div id="pedidos" class="max-w-7xl mx-auto px-4 mb-16">
+        <div id="pedidos-lista" class="bg-white shadow-md rounded-lg p-4">
+            <p class="text-center">Nenhum pedido realizado ainda.</p>
+        </div>
+    </div>
+    <!-- FIM SEÇÃO DE PEDIDOS -->
+
+    <!-- START BUTTOON CART FOOTER -->
+    <footer class="w-full bg-red-500 py-3 fixed bottom-0 z-40 flex items justify-center">
+        <a class="flex items-center gap-2 text-white font-bold" href="index.html">
+            Voltar ao Menu
+            <i class="fa fa-arrow-left text-lg text-white"></i>
+        </a>
+    </footer>
+    <!-- BUTTOON CART FOOTER END -->
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const pedidosLista = document.getElementById("pedidos-lista");
+            const pedidos = JSON.parse(localStorage.getItem("pedidos")) || [];
+
+            // Limpar a lista atual
+            pedidosLista.innerHTML = "";
+
+            if (pedidos.length === 0) {
+                pedidosLista.innerHTML = "<p class='text-center'>Nenhum pedido realizado ainda.</p>";
+            } else {
+                pedidos.forEach(pedido => {
+                    const pedidoItem = document.createElement("div");
+                    pedidoItem.className = "border-b py-2";
+                    pedidoItem.innerHTML = `
+                        <p><strong>Mesa:</strong> ${pedido.mesa}</p>
+                        <p><strong>Itens:</strong></p>
+                        <ul>
+                            ${pedido.itens.map(item => `<li>${item.name} - Qtd: ${item.quantity}</li>`).join("")}
+                        </ul>
+                    `;
+                    pedidosLista.appendChild(pedidoItem);
+                });
+            }
+        });
+    </script>
+</body>
+</html>

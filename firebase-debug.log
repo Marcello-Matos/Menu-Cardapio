@@ -1,0 +1,123 @@
+[debug] [2024-11-28T20:53:43.429Z] ----------------------------------------------------------------------
+[debug] [2024-11-28T20:53:43.441Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\marce\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2024-11-28T20:53:43.441Z] CLI Version:   13.27.0
+[debug] [2024-11-28T20:53:43.441Z] Platform:      win32
+[debug] [2024-11-28T20:53:43.442Z] Node Version:  v20.13.1
+[debug] [2024-11-28T20:53:43.442Z] Time:          Thu Nov 28 2024 17:53:43 GMT-0300 (Horário Padrão de Brasília)
+[debug] [2024-11-28T20:53:43.442Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-11-28T20:53:43.452Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-11-28T20:53:43.452Z] > authorizing via signed-in user (marcelloxmarcellojr@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\marce\Desktop\Todos os cardapios do menu\cardapio whatsApp funcionando\cardapio whatsApp funcionando
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2024-11-28T20:56:00.553Z] Checked if tokens are valid: false, expires at: 1719019008351
+[debug] [2024-11-28T20:56:00.554Z] Checked if tokens are valid: false, expires at: 1719019008351
+[debug] [2024-11-28T20:56:00.554Z] > refreshing access token with scopes: []
+[debug] [2024-11-28T20:56:00.559Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2024-11-28T20:56:00.559Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-11-28T20:56:01.357Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2024-11-28T20:56:01.357Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-11-28T20:56:01.366Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=100
+[debug] [2024-11-28T20:56:02.352Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects 200
+[debug] [2024-11-28T20:56:02.352Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects [omitted]
+[debug] [2024-11-28T20:58:46.629Z] ----------------------------------------------------------------------
+[debug] [2024-11-28T20:58:46.632Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\marce\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2024-11-28T20:58:46.632Z] CLI Version:   13.27.0
+[debug] [2024-11-28T20:58:46.632Z] Platform:      win32
+[debug] [2024-11-28T20:58:46.632Z] Node Version:  v20.13.1
+[debug] [2024-11-28T20:58:46.632Z] Time:          Thu Nov 28 2024 17:58:46 GMT-0300 (Horário Padrão de Brasília)
+[debug] [2024-11-28T20:58:46.632Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-11-28T20:58:46.639Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-11-28T20:58:46.639Z] > authorizing via signed-in user (marcelloxmarcellojr@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\marce\Desktop\Todos os cardapios do menu\cardapio whatsApp funcionando\cardapio whatsApp funcionando
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[info] i  If you want to create a project in a Google Cloud organization or folder, please use "firebase projects:create" instead, and return to this command when you've created the project. 
+[debug] [2024-11-28T21:02:12.138Z] Checked if tokens are valid: true, expires at: 1732830960358
+[debug] [2024-11-28T21:02:12.139Z] Checked if tokens are valid: true, expires at: 1732830960358
+[debug] [2024-11-28T21:02:12.140Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects [none]
+[debug] [2024-11-28T21:02:12.140Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects {"projectId":"cardapio whatsapp funcionando","name":"cardapio-whatsapp-funcionando"}
+[debug] [2024-11-28T21:02:12.823Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects 400
+[debug] [2024-11-28T21:02:12.824Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects {"error":{"code":400,"message":"field [project_id] has issue [project_id contains invalid characters]","status":"INVALID_ARGUMENT","details":[{"@type":"type.googleapis.com/google.rpc.BadRequest","fieldViolations":[{"field":"project_id","description":"project_id contains invalid characters"}]},{"@type":"type.googleapis.com/google.rpc.Help","links":[{"url":"https://cloud.google.com/resource-manager/reference/rest/v1/projects"}]}]}}
+[debug] [2024-11-28T21:02:13.568Z] FirebaseError: Request to https://cloudresourcemanager.googleapis.com/v1/projects had HTTP Error: 400, field [project_id] has issue [project_id contains invalid characters]
+    at responseToError (C:\Users\marce\AppData\Roaming\npm\node_modules\firebase-tools\lib\responseToError.js:52:12)
+    at RetryOperation._fn (C:\Users\marce\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:312:77)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+[error] 
+[error] Error: Failed to create project. See firebase-debug.log for more info.
+[debug] [2024-11-28T21:05:06.299Z] ----------------------------------------------------------------------
+[debug] [2024-11-28T21:05:06.302Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\marce\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js projects:create
+[debug] [2024-11-28T21:05:06.303Z] CLI Version:   13.27.0
+[debug] [2024-11-28T21:05:06.303Z] Platform:      win32
+[debug] [2024-11-28T21:05:06.303Z] Node Version:  v20.13.1
+[debug] [2024-11-28T21:05:06.303Z] Time:          Thu Nov 28 2024 18:05:06 GMT-0300 (Horário Padrão de Brasília)
+[debug] [2024-11-28T21:05:06.303Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-11-28T21:05:06.309Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-11-28T21:05:06.310Z] > authorizing via signed-in user (marcelloxmarcellojr@gmail.com)
+[debug] [2024-11-28T21:07:31.839Z] Checked if tokens are valid: true, expires at: 1732830960358
+[debug] [2024-11-28T21:07:31.840Z] Checked if tokens are valid: true, expires at: 1732830960358
+[debug] [2024-11-28T21:07:31.841Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects [none]
+[debug] [2024-11-28T21:07:31.841Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects {"projectId":"firebase projects:create","name":"cardapio-whatsapp-2024"}
+[debug] [2024-11-28T21:07:32.626Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects 400
+[debug] [2024-11-28T21:07:32.627Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects {"error":{"code":400,"message":"field [project_id] has issue [Cannot create domain prefixed projects]","status":"INVALID_ARGUMENT","details":[{"@type":"type.googleapis.com/google.rpc.BadRequest","fieldViolations":[{"field":"project_id","description":"Cannot create domain prefixed projects"}]},{"@type":"type.googleapis.com/google.rpc.Help","links":[{"url":"https://cloud.google.com/resource-manager/reference/rest/v1/projects"}]}]}}
+[debug] [2024-11-28T21:07:33.177Z] FirebaseError: Request to https://cloudresourcemanager.googleapis.com/v1/projects had HTTP Error: 400, field [project_id] has issue [Cannot create domain prefixed projects]
+    at responseToError (C:\Users\marce\AppData\Roaming\npm\node_modules\firebase-tools\lib\responseToError.js:52:12)
+    at RetryOperation._fn (C:\Users\marce\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:312:77)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+[error] 
+[error] Error: Failed to create project. See firebase-debug.log for more info.
+[debug] [2024-11-28T21:09:55.245Z] ----------------------------------------------------------------------
+[debug] [2024-11-28T21:09:55.248Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\marce\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js projects:create
+[debug] [2024-11-28T21:09:55.248Z] CLI Version:   13.27.0
+[debug] [2024-11-28T21:09:55.249Z] Platform:      win32
+[debug] [2024-11-28T21:09:55.249Z] Node Version:  v20.13.1
+[debug] [2024-11-28T21:09:55.249Z] Time:          Thu Nov 28 2024 18:09:55 GMT-0300 (Horário Padrão de Brasília)
+[debug] [2024-11-28T21:09:55.249Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-11-28T21:09:55.255Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-11-28T21:09:55.256Z] > authorizing via signed-in user (marcelloxmarcellojr@gmail.com)
+[debug] [2024-11-28T21:10:48.168Z] Checked if tokens are valid: true, expires at: 1732830960358
+[debug] [2024-11-28T21:10:48.168Z] Checked if tokens are valid: true, expires at: 1732830960358
+[debug] [2024-11-28T21:10:48.170Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects [none]
+[debug] [2024-11-28T21:10:48.170Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects {"projectId":"firebase projects:creat","name":"cardapio-whatsapp-app"}
+[debug] [2024-11-28T21:10:48.713Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects 400
+[debug] [2024-11-28T21:10:48.713Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects {"error":{"code":400,"message":"Request contains an invalid argument.","status":"INVALID_ARGUMENT","details":[{"@type":"type.googleapis.com/google.rpc.BadRequest","fieldViolations":[{"field":"project_id","description":"Cannot create domain prefixed projects"},{"field":"project_id","description":"project_id must be at least 6 characters long"}]},{"@type":"type.googleapis.com/google.rpc.Help","links":[{"url":"https://cloud.google.com/resource-manager/reference/rest/v1/projects"}]}]}}
+[debug] [2024-11-28T21:10:49.100Z] FirebaseError: Request to https://cloudresourcemanager.googleapis.com/v1/projects had HTTP Error: 400, Request contains an invalid argument.
+    at responseToError (C:\Users\marce\AppData\Roaming\npm\node_modules\firebase-tools\lib\responseToError.js:52:12)
+    at RetryOperation._fn (C:\Users\marce\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:312:77)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+[error] 
+[error] Error: Failed to create project. See firebase-debug.log for more info.
