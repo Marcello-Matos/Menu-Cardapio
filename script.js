@@ -122,29 +122,41 @@ checkoutBtn.addEventListener("click", function () {
 
   if (cart.length === 0) return;
 
-  // Salva o carrinho no localStorage
-  localStorage.setItem('cart', JSON.stringify(cart));
+  // Assume que o número da mesa já é conhecido e armazenado no programa
+  const mesaNumero = getMesaNumero(); // Função que retorna o número da mesa
+
+  // Recupera todos os pedidos armazenados no localStorage
+  let todosPedidos = JSON.parse(localStorage.getItem('todosPedidos')) || [];
+
+  // Adiciona o novo pedido à lista
+  todosPedidos.push({
+    mesa: mesaNumero,
+    itens: cart
+  });
+
+  // Salva todos os pedidos de volta no localStorage
+  localStorage.setItem('todosPedidos', JSON.stringify(todosPedidos));
 
   // Limpar o carrinho após o envio
   cart = [];
   updateCartModal(); 
-  updateCartCounter(); 
+  updateCartCounter();
 
-  alert("Pedido enviado com sucesso!");
-
-  // Redireciona para a nova página de pedidos
-  window.location.href = 'pedido.html';
+  // Exibe a mensagem de sucesso usando SweetAlert2
+  Swal.fire({
+    title: "Pedido enviado com sucesso!",
+    text: `Seu pedido foi enviado para a cozinha.\nMesa: ${mesaNumero}`,
+    icon: "success"
+  });
 });
 
-const checkoutBtn1 = document.getElementById("checkout-btn");
+// Função exemplo para obter o número da mesa
+function getMesaNumero() {
+  // Substitua essa função pela implementação que retorna o número da mesa configurado
+  return "1"; // Exemplo de número da mesa
+}
 
-checkoutBtn.addEventListener("click", function() {
-    Swal.fire({
-        title: "Pedido enviado com sucesso!",
-        text: "Seu pedido foi enviado para a cozinha.",
-        icon: "success"
-    });
-});
+
 
 // CONFIGURAÇÃO DO QR CODE INICO
 

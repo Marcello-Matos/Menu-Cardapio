@@ -4,35 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pedido</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
-    <h1>Pedido</h1>
+    <h1>Pedidos</h1>
     <div id="pedido-container"></div>
     
     <script>
-        // Função para obter os pedidos e o número da mesa do localStorage e exibir na página
+        // Função para obter todos os pedidos do localStorage e exibir na página
         function exibirPedidos() {
             const pedidoContainer = document.getElementById('pedido-container');
-            const cart = JSON.parse(localStorage.getItem('cart'));
-            const mesaNumero = localStorage.getItem('mesaNumero');
+            const todosPedidos = JSON.parse(localStorage.getItem('todosPedidos')) || [];
             
-            if (!cart || cart.length === 0) {
-                pedidoContainer.innerHTML = '<p>Carrinho vazio.</p>';
+            if (todosPedidos.length === 0) {
+                pedidoContainer.innerHTML = '<p>Não há pedidos no momento.</p>';
                 return;
             }
             
-            cart.forEach(item => {
-                const itemElement = document.createElement('div');
-                itemElement.innerHTML = `
-                    <p>Produto: ${item.name} - Quantidade: ${item.quantity}</p>
+            todosPedidos.forEach((pedido, index) => {
+                const pedidoElement = document.createElement('div');
+                pedidoElement.innerHTML = `
+                    <h2>Pedido ${index + 1}</h2>
+                    <p>Mesa: ${pedido.mesa}</p>
+                    <div>
+                        ${pedido.itens.map(item => `
+                            <p>Produto: ${item.name} - Quantidade: ${item.quantity}</p>
+                        `).join('')}
+                    </div>
+                    <hr/>
                 `;
-                pedidoContainer.appendChild(itemElement);
+                pedidoContainer.appendChild(pedidoElement);
             });
-
-            // Adiciona o número da mesa ao final da lista de pedidos
-            const mesaElement = document.createElement('div');
-            mesaElement.innerHTML = `<p>Mesa: 1</p>`;
-            pedidoContainer.appendChild(mesaElement);
         }
 
         // Chama a função para exibir os pedidos quando a página carrega
