@@ -10,6 +10,7 @@ const cartCounter = document.getElementById("cart-count"); // Contador de itens 
 const addressInput = document.getElementById("address"); // Campo de endereço
 const addressWarn = document.getElementById("address-warn"); // Aviso sobre o endereço
 
+
 let cart = []; // Array que vai armazenar os itens do carrinho
 
 // Abrir o modal do carrinho quando o botão de carrinho for clicado
@@ -121,30 +122,28 @@ checkoutBtn.addEventListener("click", function () {
 
   if (cart.length === 0) return;
 
-  // Define valor padrão para o número da mesa, desativando a validação
-  const mesaNumero = "1"; 
-
-  // Montando a mensagem do pedido
-  let message = "Olá, gostaria de fazer um pedido:\n\n";
-  cart.forEach((item) => {
-    message += `Produto: ${item.name} - Quantidade: ${item.quantity}\n`;
-  });
-  message += `\nMesa:  ${mesaNumero}\n`;
-  message += "\nPor favor, confirmem o pedido.";
-
-  // Codificando a mensagem para ser usada na URL
-  const encodedMessage = encodeURIComponent(message);
-
-  // Link para o WhatsApp com a mensagem do pedido
-  const whatsappLink = `https://wa.me/5511938028926?text=${encodedMessage}`;
+  // Salva o carrinho no localStorage
+  localStorage.setItem('cart', JSON.stringify(cart));
 
   // Limpar o carrinho após o envio
-  cart = []; // Zera o carrinho
-  updateCartModal(); // Atualiza o modal para refletir o carrinho vazio
-  updateCartCounter(); // Atualiza o contador de itens no carrinho
+  cart = [];
+  updateCartModal(); 
+  updateCartCounter(); 
 
-  // Redireciona o usuário para o WhatsApp
-  window.open(whatsappLink, "_blank");
+  alert("Pedido enviado com sucesso!");
+
+  // Redireciona para a nova página de pedidos
+  window.location.href = 'pedido.html';
+});
+
+const checkoutBtn1 = document.getElementById("checkout-btn");
+
+checkoutBtn.addEventListener("click", function() {
+    Swal.fire({
+        title: "Pedido enviado com sucesso!",
+        text: "Seu pedido foi enviado para a cozinha.",
+        icon: "success"
+    });
 });
 
 // CONFIGURAÇÃO DO QR CODE INICO
