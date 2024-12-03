@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pedido</title>
+    <title>Pedidos</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <style>
-        /* Exemplo de CSS responsivo */
+        /* Estilo responsivo para garantir compatibilidade em dispositivos móveis */
         body {
             font-family: Arial, sans-serif;
             padding: 20px;
@@ -22,86 +22,18 @@
     <div class="container">
         <h1>Pedidos</h1>
         <div id="pedido-container"></div>
-        <div class="flex items-center justify-between mt-5 w-full">
-            <button id="close-model-btn">Fechar</button>
-            <button id="checkout-btn" class="bg-green-500 text-white px-4 rounded">Finalizar Pedido</button>
-        </div>
     </div>
-
+    
     <script>
-        const checkoutBtn = document.getElementById("checkout-btn");
-        let cart = []; // Certifique-se de que o array do carrinho está corretamente definido
-
-        checkoutBtn.addEventListener("click", function () {
-            const isOpen = checkRestauranteOpen();
-            if (!isOpen) {
-                alert("RESTAURANTE FECHADO NO MOMENTO!");
-                return;
-            }
-
-            if (cart.length === 0) return;
-
-            // Assume que o número da mesa já é conhecido e armazenado no programa
-            const mesaNumero = getMesaNumero(); // Função que retorna o número da mesa
-
-            // Recupera todos os pedidos armazenados no localStorage
-            let todosPedidos = JSON.parse(localStorage.getItem('todosPedidos')) || [];
-
-            // Adiciona o novo pedido à lista
-            todosPedidos.push({
-                mesa: mesaNumero,
-                itens: cart
-            });
-
-            // Salva todos os pedidos de volta no localStorage
-            localStorage.setItem('todosPedidos', JSON.stringify(todosPedidos));
-
-            // Limpar o carrinho após o envio
-            cart = [];
-            updateCartModal(); 
-            updateCartCounter();
-
-            // Exibe a mensagem de sucesso usando SweetAlert2
-            Swal.fire({
-                title: "Pedido enviado com sucesso!",
-                text: `Seu pedido foi enviado para a cozinha.\nMesa: ${mesaNumero}`,
-                icon: "success"
-            });
-        });
-
-        // Função exemplo para obter o número da mesa
-        function getMesaNumero() {
-            // Substitua essa função pela implementação que retorna o número da mesa configurado
-            return "1"; // Exemplo de número da mesa
-        }
-
-        // Função exemplo para verificar se o restaurante está aberto
-        function checkRestauranteOpen() {
-            const data = new Date();
-            const hora = data.getHours();
-            return hora >= 5 && hora < 23; // Restaurante aberto entre 5h e 23h
-        }
-
-        // Função exemplo para atualizar o modal do carrinho
-        function updateCartModal() {
-            // Implemente a lógica para atualizar o modal do carrinho
-        }
-
-        // Função exemplo para atualizar o contador de itens no carrinho
-        function updateCartCounter() {
-            // Implemente a lógica para atualizar o contador de itens
-        }
-
-        // Função para obter todos os pedidos do localStorage e exibir na página
         function exibirPedidos() {
             const pedidoContainer = document.getElementById('pedido-container');
             const todosPedidos = JSON.parse(localStorage.getItem('todosPedidos')) || [];
-
+            
             if (todosPedidos.length === 0) {
                 pedidoContainer.innerHTML = '<p>Não há pedidos no momento.</p>';
                 return;
             }
-
+            
             todosPedidos.forEach((pedido, index) => {
                 const pedidoElement = document.createElement('div');
                 pedidoElement.innerHTML = `
@@ -118,8 +50,8 @@
             });
         }
 
-        // Chama a função para exibir os pedidos quando a página carrega
         window.onload = exibirPedidos;
     </script>
 </body>
 </html>
+
